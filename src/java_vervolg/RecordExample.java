@@ -6,6 +6,12 @@ public record RecordExample(String name, String address) {
 
     record Student(String name, int age) { }
 
+
+
+    public RecordExample {
+        System.out.println("Constructor called");
+    }
+
     public static void main(String[] args) {
         var s1 = new Student("Jan", 24);
         var s2 = new Student("Jan", 24);
@@ -21,5 +27,9 @@ public record RecordExample(String name, String address) {
         System.out.println(s1.hashCode() == s2.hashCode());
         System.out.println(System.identityHashCode(s1) == System.identityHashCode(s2));
 
+
+        new RecordExample( "Jan", "Herengracht 1");
     }
+
+
 }
