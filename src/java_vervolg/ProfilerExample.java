@@ -14,7 +14,7 @@ public class ProfilerExample {
         ArrayList<Object> objects = new ArrayList<Object>();
 
         while (true) {
-            System.out.println("1 Fill Heap 2 Fill Heap & Non-Heap 3  ");
+            System.out.println("1 Fill Heap 2 Fill Heap & Non-Heap 3 Create threads");
             System.out.println("Enter your choice (1,2,3) and press Enter:");
             Scanner sc = new Scanner(System.in);
             var answer = sc.nextInt();
