@@ -4,9 +4,17 @@ package java_vervolg;
 
 public record RecordExample(String name, String address) {
 
-    record Student(String name, int age) { }
+    record Student(String name, int age) {
+        public void aMethod() {
+            System.out.println("aMethod called");
+        }
+
+        Student {
+            System.out.println("Compact constructor called");
+        }
 
 
+    }
 
     public RecordExample {
         System.out.println("Constructor called");
@@ -29,6 +37,8 @@ public record RecordExample(String name, String address) {
 
 
         new RecordExample( "Jan", "Herengracht 1");
+
+        s1.aMethod();
     }
 
 
