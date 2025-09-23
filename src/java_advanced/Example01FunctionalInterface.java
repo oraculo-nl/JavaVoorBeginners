@@ -1,4 +1,4 @@
-package java_vervolg.part2;
+package java_advanced;
 
 @FunctionalInterface
 interface InterfaceHello {
@@ -6,10 +6,10 @@ interface InterfaceHello {
 }
 
 
-public class Example24FunctionalInterface {
+public class Example01FunctionalInterface {
     InterfaceHello h = () -> System.out.println("Hello World!");
     public static void main(String[] args) {
-        Example24FunctionalInterface e = new Example24FunctionalInterface();
+        Example01FunctionalInterface e = new Example01FunctionalInterface();
         e.h.sayHello();
     }
 
