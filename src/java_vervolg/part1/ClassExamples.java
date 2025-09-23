@@ -1,4 +1,4 @@
-package java_vervolg;
+package java_vervolg.part1;
 
 // Top-level class
 public class ClassExamples {

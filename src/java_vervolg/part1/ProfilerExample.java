@@ -1,4 +1,4 @@
-package java_vervolg;
+package java_vervolg.part1;
 
 import java.lang.reflect.Proxy;
 import java.util.ArrayList;

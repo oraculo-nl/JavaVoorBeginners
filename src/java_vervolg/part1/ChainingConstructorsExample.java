@@ -1,4 +1,4 @@
-package java_vervolg;
+package java_vervolg.part1;
 
 public class ChainingConstructorsExample {
     public static void main(String[] args) {

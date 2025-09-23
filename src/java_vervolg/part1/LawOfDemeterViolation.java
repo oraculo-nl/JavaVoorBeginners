@@ -1,4 +1,4 @@
-package java_vervolg;
+package java_vervolg.part1;
 
 /**
  * Demeter was a major Greek goddess, sister to Zeus, who presided over the harvest,
