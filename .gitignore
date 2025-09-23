@@ -3,3 +3,5 @@
 /JavaVoorBeginners.iml
 *.log
 *.jfr
+*.class
+*.iml
