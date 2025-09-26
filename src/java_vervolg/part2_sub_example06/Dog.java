@@ -1,4 +1,4 @@
-package java_vervolg.part2_sub;
+package java_vervolg.part2_sub_example06;
 
 // Subklasse in hetzelfde package
 public class Dog extends Animal {

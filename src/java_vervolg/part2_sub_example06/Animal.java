@@ -1,4 +1,4 @@
-package java_vervolg.part2_sub;
+package java_vervolg.part2_sub_example06;
 
 // Superklasse
 public class Animal {

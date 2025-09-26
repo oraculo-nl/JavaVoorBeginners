@@ -21,7 +21,7 @@ Als subklassen diep in de interne logica “haken” via protected velden/method
         Als je heel bewust een extension point aanbiedt.
 */
 
-import java_vervolg.part2_sub.Dog;
+import java_vervolg.part2_sub_example06.Dog;
 
 public class Example06Protected {
 
