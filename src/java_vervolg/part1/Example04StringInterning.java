@@ -1,6 +1,6 @@
 package java_vervolg.part1;
 
-public class StringInterningExample {
+public class Example04StringInterning {
     public static void main(String[] args) {
 
         //twee strings met dezelfde inhoud EN reference
@@ -42,6 +42,10 @@ public class StringInterningExample {
         System.out.println(System.identityHashCode(naam4));
 
         System.out.println("===========================");
+
+        naam2 = "Piet";
+        System.out.println(naam2);
+        System.out.println(naam1);
 
     }
 

@@ -8,7 +8,7 @@ class Something {
     int a, b, c, d;
 }
 
-public class ProfilerExample {
+public class Example05Profiler {
     public static void main(String[] args) {
 
         ArrayList<Object> objects = new ArrayList<Object>();

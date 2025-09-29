@@ -1,6 +1,6 @@
 package java_vervolg.part1;
 
-public class InitializersExample {
+public class Example07Initializers {
     {
         System.out.println("Initializing");
     }
@@ -8,11 +8,11 @@ public class InitializersExample {
     static {
         System.out.println("static initializer example");
     }
-    public InitializersExample() {
+    public Example07Initializers() {
         System.out.println("Constructor");
     }
 
     public static void main(String[] args) {
-        new InitializersExample();
+        new Example07Initializers();
     }
 }

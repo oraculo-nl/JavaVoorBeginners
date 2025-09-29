@@ -1,6 +1,6 @@
 package java_vervolg.part1;
 
-public class AutoCloseableExample implements AutoCloseable {
+public class Example02AutoCloseable implements AutoCloseable {
     @Override
     public void close() {
         System.out.println("close() called");
@@ -13,7 +13,7 @@ public class AutoCloseableExample implements AutoCloseable {
 
 class Main {
     public static void main(String[] args) {
-        try (AutoCloseableExample res = new AutoCloseableExample()) {
+        try (Example02AutoCloseable res = new Example02AutoCloseable()) {
             res.use();
             System.out.println("inside try");
         } catch (Exception e) {

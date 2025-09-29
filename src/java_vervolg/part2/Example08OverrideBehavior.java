@@ -1,6 +1,7 @@
 package java_vervolg.part2;
 
 
+import java.util.ArrayList;
 
 public class Example08OverrideBehavior {
     // Superklasse
@@ -39,12 +40,22 @@ public class Example08OverrideBehavior {
         Animal a2 = new Dog();   // polymorfisme: Animal-referentie, Dog-object
         Animal a3 = new Cat();   // idem maar met Cat
 
-        a1.makeSound(); // roept Animal's versie aan
-        a2.makeSound(); // roept Dog's override aan
-        a3.makeSound(); // roept Cat's override aan
+        ArrayList<Animal> animals = new ArrayList<>();
+        animals.add(a1);
+        animals.add(a2);
+        animals.add(a3);
+
+        for (Animal a : animals) {
+            a.makeSound();
+        }
         /*
         Dit wordt ook wel polymorfisme genoemd
         */
+
+//        a1.makeSound(); // roept Animal's versie aan
+//        a2.makeSound(); // roept Dog's override aan
+//        a3.makeSound(); // roept Cat's override aan
+
 
     }
 }

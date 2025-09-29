@@ -34,7 +34,7 @@ class ShapeFactory {
 }
 
 // Client
-public class FactoryExample {
+public class Example03Factory {
     public static void main(String[] args) {
         ShapeFactory factory = new ShapeFactory();
 

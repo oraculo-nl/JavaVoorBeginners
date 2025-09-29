@@ -2,7 +2,10 @@ package java_vervolg.part1;
 
 import java.util.*;
 
-public class DefensiveCopiesOfMutables {
+public class Example12DefensiveCopiesOfMutables {
+    //defensive copy betekent kopie maken van de data om
+    //ongeoorloofde wijzigingen in de originele data te voorkomen
+
     public static void main(String[] args) {
         List<String> lijst = new ArrayList<>();
         lijst.add("Java");
@@ -32,12 +35,12 @@ class Leerling {
     private final List<String> courses;
 
     public Leerling(List<String> courses) {
-        // defensive copy bij opslaan
+        // defensive copy bij opslaan - kopie maken van de input
         this.courses = new ArrayList<>(courses);
     }
 
     public List<String> getCourses() {
-        // defensive copy bij teruggeven
+        // defensive copy bij teruggeven - kopie maken van de output
         return new ArrayList<>(courses);
     }
 }

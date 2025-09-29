@@ -1,6 +1,6 @@
 package java_vervolg.part1;
 
-public class AmbiguousOverloading {
+public class Example08AmbiguousOverloading {
 
     void process(String x) {
         System.out.println("int");
@@ -11,7 +11,7 @@ public class AmbiguousOverloading {
     }
 
     public static void main(String[] args) {
-        AmbiguousOverloading d = new AmbiguousOverloading();
+        Example08AmbiguousOverloading d = new Example08AmbiguousOverloading();
         //uncomment the following lines to show compiler error due to ambiguity
 //        d.process(null); // ???
 //        d.process(null);

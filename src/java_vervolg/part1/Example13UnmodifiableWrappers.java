@@ -2,9 +2,15 @@ package java_vervolg.part1;
 
 import java.util.*;
 
-public class UnmodifiableWrappers {
+public class Example13UnmodifiableWrappers {
+
+    // voor lijsten kun je gebruik maken van
+    // 1. Collections.unmodifiableList om een read-only view terug te krijgen (geeft wel nieuwe veranderingen weer)
+    // 2. List.of() geeft een kopie als lijst terug, die
+
+
     public static void main(String[] args) {
-        var uw = new UnmodifiableWrappers();
+        var uw = new Example13UnmodifiableWrappers();
         Student s = uw.new Student();
         List<String> lijst = s.getCourses();
 
@@ -36,6 +42,7 @@ public class UnmodifiableWrappers {
         lijst.add("Hacking");
 
         System.out.println("works with ref"); // [Java, Python]
+        System.out.println(lijst);
 
     }
 

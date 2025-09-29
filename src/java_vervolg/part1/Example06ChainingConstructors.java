@@ -1,6 +1,6 @@
 package java_vervolg.part1;
 
-public class ChainingConstructorsExample {
+public class Example06ChainingConstructors {
     public static void main(String[] args) {
         // Call the no-argument constructor
         Student student1 = new Student();

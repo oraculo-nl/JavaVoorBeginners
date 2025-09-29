@@ -1,6 +1,6 @@
 package java_vervolg.part1;
 
-public class VarargsOverloadDemo {
+public class Example10VarargsOverloadDemo {
 
     // Overload 1: exacte match
     static void greet(String name) {

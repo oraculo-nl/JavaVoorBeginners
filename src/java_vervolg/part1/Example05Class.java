@@ -1,7 +1,7 @@
 package java_vervolg.part1;
 
 // Top-level class
-public class ClassExamples {
+public class Example05Class {
 
     private String top_level_var = "top level var";
 
@@ -9,7 +9,7 @@ public class ClassExamples {
     class MemberClass {
         void show() {
             System.out.println("Inside MemberClass");
-            System.out.println(ClassExamples.this.top_level_var);
+            System.out.println(Example05Class.this.top_level_var);
         }
     }
 
@@ -45,7 +45,7 @@ public class ClassExamples {
         System.out.println("Inside Top-level Class");
 
         // Member (inner) class: needs an instance of outer class
-        ClassExamples outer = new ClassExamples();
+        Example05Class outer = new Example05Class();
         MemberClass member = outer.new MemberClass();
         member.show();
 

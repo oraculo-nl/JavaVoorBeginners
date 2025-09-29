@@ -2,21 +2,22 @@ package java_vervolg.part1;
 
 
 
-public record RecordExample(String name, String address) {
+public record Example01Record(String name, String address) {
 
     record Student(String name, int age) {
         public void aMethod() {
             System.out.println("aMethod called");
         }
 
-        Student {
+        public Student {
             System.out.println("Compact constructor called");
         }
 
 
     }
 
-    public RecordExample {
+    //constructor
+    public Example01Record {
         System.out.println("Constructor called");
     }
 
@@ -36,7 +37,7 @@ public record RecordExample(String name, String address) {
         System.out.println(System.identityHashCode(s1) == System.identityHashCode(s2));
 
 
-        new RecordExample( "Jan", "Herengracht 1");
+        new Example01Record( "Jan", "Herengracht 1");
 
         s1.aMethod();
     }

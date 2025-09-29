@@ -1,10 +1,12 @@
 package java_vervolg.part1;
 
-public class BuilderExample {
+public class Example09Builder {
     public static void main(String[] args) {
         //met normale class
         new User("Jan");
         new User("Jan", 55);
+        new User("Jan", 55, "<EMAIL>");
+        new User("Jan", 55, "<EMAIL>", "Herengracht 1");
 
         //met builder
         new UserB.Builder().name("Jan").build();
