@@ -1,4 +1,4 @@
-package java_advanced.generics;
+package java_advanced.lambdas;
 
 @FunctionalInterface
 interface InterfaceHello {
@@ -6,10 +6,10 @@ interface InterfaceHello {
 }
 
 
-public class aExample01FunctionalInterface {
+public class Example01FunctionalInterface {
     InterfaceHello h = () -> System.out.println("Hello World!");
     public static void main(String[] args) {
-        aExample01FunctionalInterface e = new aExample01FunctionalInterface();
+        Example01FunctionalInterface e = new Example01FunctionalInterface();
         e.h.sayHello();
     }
 
