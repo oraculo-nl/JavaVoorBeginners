@@ -1,8 +1,10 @@
 package java_advanced.methodchaining;
 
+
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
 
 public class Example02AssertJChaining {
 
@@ -10,6 +12,9 @@ public class Example02AssertJChaining {
     @Test
     void testStringProperties() {
         String message = "Hello World";
+
+
+
 
         assertThat(message)
                 .isNotNull()

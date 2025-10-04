@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testImplementation 'org.assertj:assertj-core:3.27.0'
+}
+testing {
+    suites {
+        test {
+            useJUnitJupiter()   // laat Gradle de juiste JUnit 5 deps toevoegen
+        }
+    }
+}
+

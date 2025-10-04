@@ -6,3 +6,34 @@
 *.class
 *.iml
 *.ser
+
+
+# --- Java ---
+*.class
+*.log
+*.jar
+*.war
+*.ear
+
+# --- IntelliJ IDEA ---
+.idea/
+*.iml
+out/
+
+# --- VS Code (optioneel) ---
+.vscode/
+
+# --- Gradle ---
+.gradle/
+build/
+
+# --- OS-specifiek ---
+.DS_Store
+Thumbs.db
+
+# --- Logs en tijdelijke bestanden ---
+*.tmp
+*.swp
+
+# --- Test reports ---
+test-output/
