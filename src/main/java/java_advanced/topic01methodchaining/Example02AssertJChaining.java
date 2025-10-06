@@ -1,4 +1,4 @@
-package java_advanced.topic03methodchaining;
+package java_advanced.topic01methodchaining;
 
 public class Example02AssertJChaining {
 

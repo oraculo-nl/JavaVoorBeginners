@@ -1,4 +1,4 @@
-package java_advanced.topic01generics;
+package java_advanced.topic03generics;
 
 public class Example0GenericClass {
     // A generic Box class that can hold any type

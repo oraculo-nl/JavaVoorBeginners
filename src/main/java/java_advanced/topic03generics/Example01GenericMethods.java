@@ -1,4 +1,4 @@
-package java_advanced.topic01generics;
+package java_advanced.topic03generics;
 
 public class Example01GenericMethods {
 
