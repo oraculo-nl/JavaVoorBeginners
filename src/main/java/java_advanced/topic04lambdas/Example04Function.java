@@ -3,7 +3,7 @@ package java_advanced.topic04lambdas;
 import java.util.*;
 import java.util.function.Function;
 
-public class ExampleLambdaTypeInference {
+public class Example04Function {
 
     public static void main(String[] args) {
         List<String> namen = List.of("Hond", "Kat", "Olifant");

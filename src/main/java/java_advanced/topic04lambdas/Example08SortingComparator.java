@@ -2,7 +2,7 @@ package java_advanced.topic04lambdas;
 
 import java.util.*;
 
-public class ExampleLambdaSortingComparator {
+public class Example08SortingComparator {
 
     public static void main(String[] args) {
         List<String> dieren = new ArrayList<>(List.of("Hond", "Kat", "Olifant"));
