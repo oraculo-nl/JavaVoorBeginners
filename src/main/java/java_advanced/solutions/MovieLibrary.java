@@ -1,5 +1,7 @@
 package java_advanced.solutions;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -132,6 +134,32 @@ public class MovieLibrary {
                 .map(Movie::title).sorted().toList();
 
 
+    }
+
+    public static List<Movie> readCsv(Path path) {
+        try (var lines = Files.lines(path)) {
+            return lines.map(String::trim)
+                    .filter(line -> !line.isBlank())
+                    .map(line -> line.split(";"))
+                    .filter(parts -> parts.length == 5)
+                    .map(parts -> {
+                        try {
+                            return new Movie(
+                                    parts[0],
+                                    parts[1],
+                                    Double.parseDouble(parts[2]),
+                                    Integer.parseInt(parts[3]),
+                                    Integer.parseInt(parts[4])
+                            );
+                        } catch (NumberFormatException e) {
+                            return null;
+                        }
+                    })
+                    .filter(movie -> movie != null)
+                    .toList();
+        } catch (Exception e) {
+            return List.of();
+        }
     }
 
 }
