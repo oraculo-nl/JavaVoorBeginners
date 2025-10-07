@@ -1,25 +1,34 @@
 package java_advanced.solutions;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class MovieLibrary {
 
     private List<Movie> movies = new ArrayList<>();
 
     public void add(Movie movie) {
-
+        if (movie != null)
+            this.movies.add(movie);
     }
 
     public void addAll(Collection<Movie> movies) {
-        this.movies.addAll(movies);
+        if (movies != null)
+            this.movies.addAll(movies.stream()
+                    .filter(Objects::nonNull)
+                    .toList());
     }
 
     public List<Movie> all() {
-        return new ArrayList<>();
+        return this.movies.stream()
+                .toList();
     }
 
     public List<String> titlesSorted() {
-        return new ArrayList<>();
+        return this.movies.stream()
+                .map(Movie::title)
+                .sorted()
+                .toList();
     }
 
 
@@ -31,15 +40,26 @@ public class MovieLibrary {
     }
 
     public boolean anyHighRated(double threshold) {
-        return false;
+        return this.movies.stream()
+                .anyMatch(m -> m.rating() >= threshold);
     }
 
     public double averageRating() {
-        return 0;
+        return this.movies.stream()
+                .mapToDouble(Movie::rating)
+                .average()
+                .orElse(0.0);
     }
 
     public List<Movie> topNLongest(int n) {
-        return new ArrayList<>();
+        if (n > 0) {
+            return this.movies.stream()
+                    .sorted(Comparator.comparing(Movie::length)
+                            .reversed())
+                    .limit(n)
+                    .toList();
+        }
+        return Collections.unmodifiableList(new ArrayList<>());
     }
 
     public List<String> uniqueGenres() {
@@ -51,7 +71,8 @@ public class MovieLibrary {
     }
 
     public Map<String, Long> countByGenre() {
-        return new HashMap<>();
+        return this.movies.stream()
+                .collect(Collectors.groupingBy(Movie::genre, Collectors.counting()));
     }
 
     public Map<String, Movie> bestPerGenre() {
@@ -66,18 +87,51 @@ public class MovieLibrary {
     }
 
     public List<String> titlesByYearRange(int startYear, int endYear) {
+        if (startYear <= endYear) {
+            return this.movies.stream()
+                    .filter(movie -> movie.year() >= startYear && movie.year() <= endYear)
+                    .map(Movie::title)
+                    .sorted()
+                    .toList();
+        }
         return new ArrayList<>();
     }
 
     public int totalWatchTimeOf(String genre) {
-        return 0;
+        return this.movies.stream()
+                .filter(movie -> movie.genre()
+                        .equalsIgnoreCase(genre))
+                .mapToInt(movie -> movie.length())
+                .sum();
     }
 
     public List<String> recommendations(double minRating, int maxLength) {
-        return new ArrayList<>();
+
+        return this.movies.stream().filter(movie -> movie.rating() >= minRating && movie.length() <= maxLength)
+                .sorted(Comparator.comparing(Movie::title, String.CASE_INSENSITIVE_ORDER))
+                .sorted(Comparator.comparing(Movie::length))
+                .sorted(Comparator.comparing(Movie::rating).reversed())
+                .map(Movie::title).toList();
+    }
+
+
+    public int size() {
+        return this.movies.size();
     }
 
     public List<String> searchTokensToTitles(List<List<String>> tokens) {
-        return new ArrayList<>();
+
+        var validtokens = tokens.stream().flatMap(strings -> strings.stream())
+                .filter(token -> token != null && !token.isBlank())
+                .map(String::trim)
+                .map(String::toLowerCase)
+                .distinct()
+                .toList();
+
+        return this.movies.stream().filter(movie -> validtokens.stream().anyMatch(token -> movie.title().toLowerCase().contains(token)))
+                .map(Movie::title).sorted().toList();
+
+
     }
+
 }
