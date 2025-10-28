@@ -32,7 +32,6 @@ public class Example09MethodReferences {
         // 4️⃣ Constructor reference
         List<Integer> lengths = names.stream()
                 .map(String::length)
-                .map(Integer::new) // creates Integer objects
                 .toList();
 
         System.out.println("Lengths: " + lengths);
