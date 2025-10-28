@@ -5,7 +5,7 @@ import java.util.stream.IntStream;
 public class Example04ParallelStreams {
 
     public static void main(String[] args) {
-        int N = 50000_000_000;
+        int N = 5_000_000;
 
         // --- 1) Sequentieel: som van kwadraten 1..N ---
         long t1 = System.nanoTime();
