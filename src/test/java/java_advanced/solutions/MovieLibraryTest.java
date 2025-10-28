@@ -2,6 +2,7 @@ package java_advanced.solutions;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
@@ -197,12 +198,47 @@ class MovieLibraryTest {
     }
 
     @Test
+    void recommendations_filtersAndSorts_exactMatch_andUnmodifiable() {
+        var lib = seeded();
+
+        // Verwachte uitkomst objectief afleiden uit de brondata:
+        double minRating = 8.5;
+        int maxLength = 150;
+
+        var expected = lib.all().stream()
+                .filter(m -> m.rating() >= minRating && m.length() <= maxLength)
+                .sorted(
+                        Comparator.comparingDouble(Movie::rating).reversed()
+                                .thenComparingInt(Movie::length)
+                                .thenComparing(Movie::title, String.CASE_INSENSITIVE_ORDER)
+                )
+                .map(Movie::title)
+                .toList(); // onwijzigbaar
+
+        var recs = lib.recommendations(minRating, maxLength);
+
+        // 1) Exacte gelijkheid (dus niet vacuüm-waar)
+        assertEquals(expected, recs);
+
+        // 2) Onwijzigbaar naar buiten
+        assertThrows(UnsupportedOperationException.class, () -> recs.add("X"));
+    }
+
+    @Test
+    void recommendations_returnsEmpty_whenNoMatches() {
+        var lib = seeded();
+        var recs = lib.recommendations(9.99, 10); // praktisch geen film haalt dit
+        assertTrue(recs.isEmpty());
+    }
+
+
+    @Test
     void searchTokensToTitles_flatMap_distinct_containsAnyToken_caseInsensitive() {
         var lib = seeded();
         var tokens = List.of(
                 List.of(" dark ", " king"),
                 List.of("MATRIX", "endgame"),
-                List.of("  ", null)
+                Arrays.asList("  ", null)
         );
         var titles = lib.searchTokensToTitles(tokens);
         // Bevat titels met een van de tokens als substring (case-insensitive)
@@ -216,4 +252,5 @@ class MovieLibraryTest {
         // uniek
         assertEquals(new HashSet<>(titles).size(), titles.size());
     }
+
 }
